@@ -2,9 +2,9 @@ const express = require("express");
 const app = express();
 const jokes = require("./joke.json");
 
-app.get("/", (req, res) => {
+app.get("/joke", (req, res) => {
     const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
-    // console.log("Random Joke:", randomJoke.joke); // Print joke in console
+    console.log("Random Joke:", randomJoke.joke); // Print joke in console
     res.json(randomJoke);
 });
 
